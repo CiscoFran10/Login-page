@@ -30,6 +30,8 @@ function modal() {
 
 		tooltipButtons.forEach((btn) => {
 			btn.addEventListener("click", (e) => {
+				e.preventDefault();
+        
 				const tooltipId = e.target.getAttribute("data-control-tooltip");
 				const tooltipWrapper = document.getElementById(tooltipId);
 
