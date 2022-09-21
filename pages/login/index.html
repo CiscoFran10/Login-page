@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/tooltip.css">
+    <link rel="stylesheet" href="/styles/modal.css">
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="index.css">
     <title>Login</title>
 </head>
+
 <body>
+    <div class="login-container">
+        <div class="intro">
+            <h1 class="intro-title">Designed for individuals</h1>
+            <p class="intro-description">See the analytics and grow your business remotely, from anywhere</p>
+        </div>
+
+        <form class="login-form">
+
+            <div class="form-header">
+                <h1 class="form-title">Welcome back</h1>
+                <h2 class="form-subtitle">Login into your account</h2>
+            </div>
+
+            <div class="input-container">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" id="email" placeholder="user@gmail...">
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="******">
+            </div>
+
+            <div class="flex ">
+                <span class="toggle-password"></span>
+                <label class="toggle-label" for="toggle-password">Show/Hide password</label>
+
+                <button data-control-modal="modal-login" class="forgot-btn">Forgot password ?</button>
+            </div>
+
+            <button for="login-form" class="form-btn">Login</button>
+
+            <div class="form-footer">
+                <div class="flex">
+                    <p>Sign up with</p>
+                    <ul class="flex" role="list">
+                        <li><img class="icon" src="../../assets/apple.svg" alt="apple-icon"></li>
+                        <li><img class="icon" src="../../assets/google.svg" alt="google-icon"></li>
+                        <li><img class="icon" src="../../assets/instagram.svg" alt="instagram-icon"></li>
+                    </ul>
+                </div>
+                <p>Don't have an account? <a href="#">Sign Up</a> </p>
+            </div>
+        </form>
+    </div>
+
+    <div class="tooltip" id="tooltip-login">
+        <h1 class="tooltip-title">You new password was sent to your email</h1>
+        <button class="tooltip-btn" data-control-tooltip="tooltip-login">Got it</button>
+    </div>
+
+    <div class="modal-wrapper" id="modal-login">
+        <div class="modal">
+            <button data-control-modal="modal-login" class="close-btn">X</button>
+            <div class="modal-header">
+                <h1 class="modal-title">Forgot your password ?</h1>
+                <p class="modal-description">We'll email you a link to reset your password</p>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <label for="modal-input" hidden="true">E-mail</label>
+                    <input type="text" class="modal-input" id="modal-input" placeholder="E-mail">
+
+                    <button class="modal-btn" data-control-tooltip="tooltip-login">Send me a link</button>
+
+                    <button class="modal-btn" data-control-modal="modal-login">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="/scripts/modal.js"></script>
 </body>
+
 </html>
