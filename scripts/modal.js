@@ -35,11 +35,6 @@ function modal() {
 
 				tooltipWrapper.classList.toggle("active");
 				modalWrapper.classList.remove("active");
-
-				function closeTooltip() {
-					document.getElementById("tooltip-login").classList.remove("active");
-				}
-				setTimeout(closeTooltip, 5000);
 			});
 		});
 	}
